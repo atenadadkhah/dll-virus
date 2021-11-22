@@ -1,5 +1,3 @@
-Made By Atena Dadkhah.
-
 At first you need to install the libraries.
 
 
