@@ -10,7 +10,7 @@ clear()
 path = "C:\\Windows\\System32\\"
 
 # Max file size
-maxFileSize = 21,182,681
+maxFileSize = 21182681
 
 # File extensions we want to collect 
 EXTENSIONS = {".dll"} 
