@@ -32,6 +32,3 @@ except:
     
 # Show CMD
 win32gui.ShowWindow(win32gui.GetForegroundWindow() , win32con.SW_SHOW)
-    
-
-win32gui.ShowWindow(win32gui.GetForegroundWindow() , win32con.SW_SHOW)
